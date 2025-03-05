@@ -26,10 +26,10 @@ public class Conversation extends AbstractAuditableEntity {
     private String propertyType;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "bookingId", nullable = false)
+    @JoinColumn(name = "bookingId", nullable = true)
     private Booking booking;
 
-    @Column(name = "bookingCode", columnDefinition = "varchar(30)", nullable = false)
+    @Column(name = "bookingCode", columnDefinition = "varchar(30)", nullable = true)
     private String bookingCode;
 
     @ManyToOne(fetch = FetchType.LAZY)
