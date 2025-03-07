@@ -5,9 +5,8 @@ import lombok.Getter;
 
 @Getter
 public enum CustomerType {
-    GUEST(0),
-    USER(1),
-    STAFF(2);
+    CUSTOMER(0),
+    STAFF(1);
 
     private final int value;
 

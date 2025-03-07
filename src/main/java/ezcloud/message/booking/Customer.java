@@ -69,7 +69,7 @@ public class Customer extends AbstractAuditableEntity {
     private String faceId;
 
     @Enumerated(EnumType.ORDINAL)
-    @Column(name = "customerType", columnDefinition = "integer default 0", nullable = false)
+    @Column(name = "customerType", columnDefinition = "smallint(1) default 0", nullable = false)
     private CustomerType customerType;
 
     @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)

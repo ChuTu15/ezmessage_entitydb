@@ -3,6 +3,7 @@ package ezcloud.message.messenger;
 import ezcloud.message.AbstractAuditableEntity;
 import ezcloud.message.booking.Booking;
 import ezcloud.message.booking.Customer;
+import ezcloud.message.ota.OTA;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -24,6 +25,13 @@ public class Conversation extends AbstractAuditableEntity {
 
     @Column(name = "propertyType", columnDefinition = "varchar(30)", nullable = false)
     private String propertyType;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "otaId", nullable = false)
+    private OTA ota;
+
+    @Column(name = "saolaAIConversationCode", columnDefinition = "varchar(50)", nullable = true)
+    private String saolaAIConversationCode;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "bookingId", nullable = true)
