@@ -30,6 +30,12 @@ public class Message extends AbstractAuditableEntity {
     @Column(name = "sentBy", columnDefinition = "tinyint default 0", nullable = false)
     private Integer sentBy;
 
+    @Column(name = "createdByName", columnDefinition = "varchar(300)", nullable = true)
+    private String createdByName;
+
+    @Column(name = "createsByCode", columnDefinition = "varchar(300)", nullable = true)
+    private String createsByCode;
+
     @Column(name = "isRead", columnDefinition = "bit(1) default 0", nullable = false)
     private boolean isRead;
 }
