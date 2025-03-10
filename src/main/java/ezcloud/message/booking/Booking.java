@@ -165,6 +165,15 @@ public class Booking extends AbstractAuditableEntity {
     @Column(name = "gatewayCode", columnDefinition = "varchar(255)", nullable = true)
     private String gatewayCode;
 
+    @Column(name = "appliedGiftCodeId", columnDefinition = "binary(16)", nullable = true)
+    private String appliedGiftCodeId;
+
+    @Column(name = "paymentData", columnDefinition = "text", nullable = true)
+    private String paymentData;
+
+    @Column(name = "commission", columnDefinition = "decimal(22,2)", nullable = true)
+    private BigDecimal commission;
+
     @OneToMany(mappedBy = "booking", fetch = FetchType.LAZY)
     private Collection<BookingPayment> bookingPayments;
 }

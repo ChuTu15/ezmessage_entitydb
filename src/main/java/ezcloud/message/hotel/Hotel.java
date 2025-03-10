@@ -40,6 +40,12 @@ public class Hotel extends AbstractAuditableEntity {
     @Column(name = "countryVi", columnDefinition = "varchar(200)", nullable = false)
     private String countryVi;
 
+    @Column(name = "email", columnDefinition = "varchar(300)", nullable = false)
+    private String email;
+
+    @Column(name = "phone", columnDefinition = "varchar(100)", nullable = false)
+    private String phone;
+
     @Column(name = "descriptionVi", columnDefinition = "text", nullable = true)
     private String descriptionVi;
 
@@ -49,17 +55,12 @@ public class Hotel extends AbstractAuditableEntity {
     @JoinColumn(name = "defaultImageUrl", nullable = true)
     private String defaultImageUrl;
 
-    @Column(name = "isAutoReply", columnDefinition = "BIT(1) DEFAULT 1", nullable = false)
-    private int isAutoReply;
+    @JoinColumn(name = "isAutoReply", nullable = true)
+    private Boolean isAutoReply;
 
     @OneToMany(mappedBy = "hotel", fetch = FetchType.LAZY)
     private Set<HotelI18n> hotelI18n;
 
-    @Column(name = "startDate", columnDefinition = "datetime", nullable = true)
-    private LocalDateTime startDate;
-
-    @Column(name = "endDate", columnDefinition = "datetime", nullable = true)
-    private LocalDateTime endDate;
 
     public Optional<HotelI18n> getI18n(String langCode) {
 

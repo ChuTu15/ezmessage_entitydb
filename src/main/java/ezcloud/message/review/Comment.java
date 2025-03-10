@@ -29,6 +29,9 @@ public class Comment extends AbstractAuditableEntity {
     @Column(name = "content", columnDefinition = "text", nullable = true)
     private String content;
 
+    @Column(name = "externalCommentCode", columnDefinition = "varchar(300)", nullable = true)
+    private String externalCommentCode;
+
     @Column(name = "isProperty", columnDefinition = "bit(1) default 0", nullable = true)
     private boolean isProperty;
 }

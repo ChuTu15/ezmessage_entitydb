@@ -40,15 +40,25 @@ public class Conversation extends AbstractAuditableEntity {
     @Column(name = "bookingCode", columnDefinition = "varchar(30)", nullable = true)
     private String bookingCode;
 
+    @Column(name = "externalConversationCode", columnDefinition = "varchar(300)", nullable = true)
+    private String externalConversationCode;
+
+    @Column(name = "saolaAIConversationCode", columnDefinition = "varchar(300)", nullable = true)
+    private String saolaAIConversationCode;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "customerId", nullable = false)
     private Customer customer;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "otaId", nullable = true)
+    private OTA otaId;
+
     @Column(name = "customerCode", columnDefinition = "varchar(100)", nullable = true)
     private String customerCode;
 
-    @Column(name = "isClose", columnDefinition = "bit(1) default 0", nullable = false)
-    private boolean isClose;
+    @Column(name = "isClosed", columnDefinition = "bit(1) default 0", nullable = false)
+    private boolean isClosed;
 
     @OneToMany(mappedBy = "conversation", fetch = FetchType.LAZY)
     private Set<Message> messages;

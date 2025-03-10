@@ -9,6 +9,7 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 import java.util.Set;
+import java.util.UUID;
 
 @Entity
 @Table(name = "customer")
@@ -47,9 +48,6 @@ public class Customer extends AbstractAuditableEntity {
     @Column(name = "phone", columnDefinition = "varchar(50)", nullable = true)
     private String phone;
 
-    @Column(name = "country", columnDefinition = "varchar(30)", nullable = true)
-    private String country;
-
     @Column(name = "countryCode2", columnDefinition = "varchar(30)", nullable = true)
     private String countryCode2;
 
@@ -65,8 +63,8 @@ public class Customer extends AbstractAuditableEntity {
     @Column(name = "companyName", columnDefinition = "varchar(300)", nullable = true)
     private String companyName;
 
-    @Column(name = "faceId", columnDefinition = "varchar(300)", nullable = true)
-    private String faceId;
+    @JoinColumn(name = "propertyId", nullable = false)
+    private UUID propertyId;
 
     @Enumerated(EnumType.ORDINAL)
     @Column(name = "customerType", columnDefinition = "smallint(1) default 0", nullable = false)

@@ -18,14 +18,6 @@ public class Message extends AbstractAuditableEntity {
     @JoinColumn(name = "conversationId", nullable = false)
     private Conversation conversation;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "customerId", nullable = true)
-    private Customer customer;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "staffId", nullable = true)
-    private Staff staff;
-
     @Column(name = "externalMessageCode", columnDefinition = "varchar(300)", nullable = true)
     private String externalMessageCode;
 
@@ -35,8 +27,8 @@ public class Message extends AbstractAuditableEntity {
     @Column(name = "contentType", columnDefinition = "varchar(50)", nullable = true)
     private String contentType;
 
-    @Column(name = "isProperty", columnDefinition = "bit(1) default 0", nullable = false)
-    private boolean isProperty;
+    @Column(name = "sentBy", columnDefinition = "tinyint default 0", nullable = false)
+    private Integer sentBy;
 
     @Column(name = "isRead", columnDefinition = "bit(1) default 0", nullable = false)
     private boolean isRead;

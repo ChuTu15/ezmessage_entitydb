@@ -10,10 +10,10 @@ import java.util.Set;
 @Getter
 @Setter
 @Entity
-@Table(name = "function")
+@Table(name = "functions")
 public class Function extends AbstractAuditableEntity {
 
-    @Column(name = "functionCode", columnDefinition = "varchar(50)", nullable = false)
+    @Column(name = "functionsCode", columnDefinition = "varchar(50)", nullable = false)
     private String functionCode;
 
     @Column(name = "nameVi", columnDefinition = "varchar(300)", nullable = false)

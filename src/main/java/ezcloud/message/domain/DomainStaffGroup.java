@@ -9,6 +9,8 @@ import lombok.Setter;
 
 import jakarta.persistence.*;
 
+import java.util.UUID;
+
 @Getter
 @Setter
 @Entity
@@ -20,7 +22,10 @@ public class DomainStaffGroup extends AbstractAuditableEntity {
     private StaffGroup staffGroup;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "hotelId")
+    @JoinColumn(name = "hotelId", nullable = false)
     private Hotel hotel;
+
+    @JoinColumn(name = "chainId", nullable = false)
+    private UUID chainId;
 
 }
