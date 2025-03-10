@@ -25,6 +25,12 @@ public class Staff extends AbstractAuditableEntity {
      */
     private static final long serialVersionUID = 7854177732276638304L;
 
+    @Column(name = "staffCode", columnDefinition = "varchar(50)", nullable = true)
+    private String staffCode;
+
+    @Column(name = "staffAlias", columnDefinition = "nvarchar(300)", nullable = true)
+    private String staffAlias;
+
     @Column(name = "fullname", columnDefinition = "varchar(100)", nullable = true)
     private String fullname;
 
@@ -50,35 +56,17 @@ public class Staff extends AbstractAuditableEntity {
     @Column(name = "address", columnDefinition = "varchar(300)", nullable = true)
     private String address;
 
-    @Column(name = "expiredVerify", columnDefinition = "datetime", nullable = true)
-    private LocalDateTime expiredVerify;
-
     @Column(name = "position", columnDefinition = "varchar(200)", nullable = true)
     private String position;
 
     @Column(name = "isOwner", columnDefinition = "bit default 0", nullable = false)
     private boolean isOwner;
 
-    @Column(name = "verifier", columnDefinition = "varchar(200)", nullable = true)
-    private String verifier;
+    @Column(name = "avatarUrl", columnDefinition = "varchar(300)", nullable = true)
+    private String avatarUrl;
 
-    @Column(name = "showNotification", columnDefinition = "tinyint default 0", nullable = false)
-    private byte showNotification;
-
-    @Column(name = "isUneditable", columnDefinition = "bit default 0", nullable = false)
-    private boolean isUneditable;
-
-    @Column(name = "lastlogin", columnDefinition = "datetime", nullable = true)
-    private LocalDateTime lastlogin;
-
-    @Column(name = "description", columnDefinition = "varchar(250)", nullable = true)
+    @Column(name = "descriptionVi", columnDefinition = "varchar(250)", nullable = true)
     private String description;
-
-    @Column(name = "chatId", columnDefinition = "varchar(300)", nullable = true)
-    private String chatId;
-
-    @Column(name = "isConfirmed", columnDefinition = "bit default 0", nullable = false)
-    private boolean isConfirmed;
 
     @Column(name = "ezUserId", columnDefinition = "varchar(300)", nullable = true)
     private String ezUserId;

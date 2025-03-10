@@ -37,7 +37,7 @@ public class Permission extends AbstractAuditableEntity {
     public static final String LEVEL_SUPPER_ADMIN = "SUPPER_ADMIN";
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "functionId", nullable = false)
+    @JoinColumn(name = "functionsId", nullable = false)
     private Function function;
 
     @Column(name = "permissionCode", columnDefinition = "varchar(50)", nullable = false)
@@ -46,7 +46,7 @@ public class Permission extends AbstractAuditableEntity {
     @Column(name = "nameVi", columnDefinition = "varchar(300)", nullable = false)
     private String nameVi;
 
-    @Column(name = "level", columnDefinition = "varchar(300)", nullable = false)
+    @Column(name = "permissionLevel", columnDefinition = "varchar(300)", nullable = false)
     private String level;
 
     @OneToMany(mappedBy = "permission", fetch = FetchType.LAZY)

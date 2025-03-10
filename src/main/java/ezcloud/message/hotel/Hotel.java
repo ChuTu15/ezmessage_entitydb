@@ -55,14 +55,12 @@ public class Hotel extends AbstractAuditableEntity {
     @JoinColumn(name = "defaultImageUrl", nullable = true)
     private String defaultImageUrl;
 
+    @JoinColumn(name = "isAutoReply", nullable = true)
+    private Boolean isAutoReply;
+
     @OneToMany(mappedBy = "hotel", fetch = FetchType.LAZY)
     private Set<HotelI18n> hotelI18n;
 
-    @Column(name = "startDate", columnDefinition = "datetime", nullable = true)
-    private LocalDateTime startDate;
-
-    @Column(name = "endDate", columnDefinition = "datetime", nullable = true)
-    private LocalDateTime endDate;
 
     public Optional<HotelI18n> getI18n(String langCode) {
 

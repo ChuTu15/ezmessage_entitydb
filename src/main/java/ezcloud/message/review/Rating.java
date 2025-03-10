@@ -16,8 +16,11 @@ public class Rating extends AbstractAuditableEntity {
     @JoinColumn(name = "reviewId", nullable = false)
     private Review review;
 
-    @Column(name = "title", columnDefinition = "varchar(300)", nullable = true)
+    @Column(name = "title", columnDefinition = "nvarchar(300)", nullable = true)
     private String title;
+
+    @Column(name = "externalRatingCode", columnDefinition = "varchar(300)", nullable = true)
+    private String externalRatingCode;
 
     @Column(name = "score", columnDefinition = "double default 0", nullable = false)
     private double score;

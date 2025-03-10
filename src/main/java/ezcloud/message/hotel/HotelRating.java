@@ -20,12 +20,12 @@ public class HotelRating extends AbstractAuditableEntity {
     @JoinColumn(name = "hotelReviewId", nullable = false)
     private HotelReview hotelReview;
 
-    @Column(name = "title", columnDefinition = "varchar(300)", nullable = true)
+    @Column(name = "title", columnDefinition = "varchar(300)", nullable = false)
     private String title;
 
-    @Column(name = "score", columnDefinition = "double default 0", nullable = true)
+    @Column(name = "score", columnDefinition = "double default 0", nullable = false)
     private double score;
 
-    @Column(name = "count", columnDefinition = "integer default 0", nullable = false)
+    @Column(name = "count", columnDefinition = "integer default 0", nullable = true)
     private int count;
 }

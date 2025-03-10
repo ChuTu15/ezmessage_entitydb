@@ -27,24 +27,19 @@ public class HotelI18n extends AbstractAuditableI18nEntity {
     @JoinColumn(name = "hotelId", nullable = false)
     private Hotel hotel;
 
-    @Column(name = "address", columnDefinition = "varchar(300)", nullable = false)
+    @Column(name = "address", columnDefinition = "nvarchar(300)", nullable = false)
     private String address;
 
-    @Column(name = "city", columnDefinition = "varchar(200)", nullable = false)
+    @Column(name = "city", columnDefinition = "nvarchar(200)", nullable = false)
     private String city;
 
-    @Column(name = "country", columnDefinition = "varchar(200)", nullable = false)
+    @Column(name = "country", columnDefinition = "nvarchar(200)", nullable = false)
     private String country;
 
-    @Column(name = "beFooter", columnDefinition = "longtext", nullable = true)
-    private String beFooter;
-
-    @Column(name = "location", columnDefinition = "varchar(300)", nullable = true)
+    @Column(name = "location", columnDefinition = "nvarchar(300)", nullable = true)
     private String location;
 
     @Column(name = "area", columnDefinition = "varchar(100)", nullable = true)
     private String area;
 
-    @Column(name = "highlight", columnDefinition = "varchar(300)", nullable = true)
-    private String highlight;
 }
